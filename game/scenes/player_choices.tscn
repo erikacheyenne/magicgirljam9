@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxy4nikoqubbf"]
+
+[ext_resource type="Script" path="res://scripts/player_choices.gd" id="1_kg0mm"]
+[ext_resource type="Texture2D" uid="uid://bqx6v6a40cvt" path="res://assets/ui/Rectangle 1.png" id="1_lo42i"]
+[ext_resource type="Texture2D" uid="uid://d3soiyb3amiif" path="res://assets/ui/Interrogate.png" id="3_8j53n"]
+[ext_resource type="Texture2D" uid="uid://bv14vcv1oteb3" path="res://assets/ui/Evidence.png" id="4_dsp28"]
+[ext_resource type="Texture2D" uid="uid://w775ok287l3e" path="res://assets/ui/Items.png" id="5_hsrdc"]
+
+[node name="Player_Choices" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kg0mm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 399.0
+offset_right = 352.0
+offset_bottom = 507.0
+texture = ExtResource("1_lo42i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 94.0
+offset_top = 421.0
+offset_right = 332.0
+offset_bottom = 485.0
+
+[node name="InterrogateButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_8j53n")
+
+[node name="EvidenceButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_dsp28")
+
+[node name="ItemsButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_hsrdc")
+
+[connection signal="pressed" from="VBoxContainer/InterrogateButton" to="." method="_on_interrogate_button_pressed"]

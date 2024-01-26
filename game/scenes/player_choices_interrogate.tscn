@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfqg4xoyxnk5"]
+
+[ext_resource type="Script" path="res://scripts/player_choices_interrogate.gd" id="1_37x6u"]
+[ext_resource type="Texture2D" uid="uid://bqx6v6a40cvt" path="res://assets/ui/Rectangle 1.png" id="1_n1t5b"]
+
+[node name="Player_Choices_Interrogate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37x6u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 75.0
+offset_top = 402.0
+offset_right = 463.0
+offset_bottom = 548.0
+texture = ExtResource("1_n1t5b")
+
+[node name="AccuseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 414.0
+offset_right = 169.0
+offset_bottom = 445.0
+text = "Accuse"
+
+[node name="QuestionButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 455.0
+offset_right = 186.0
+offset_bottom = 486.0
+text = "Question"
+
+[node name="TauntButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 498.0
+offset_right = 206.0
+offset_bottom = 529.0
+text = "Taunt/Bluff"
+
+[node name="InterrogateBackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 507.0
+offset_right = 456.0
+offset_bottom = 538.0
+text = "back"
+
+[connection signal="pressed" from="InterrogateBackButton" to="." method="_on_interrogate_back_button_pressed"]
