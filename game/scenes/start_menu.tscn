@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvq0waneyd7am"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_a2dks"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1i7lf"]
+font_size = 80
+
+[sub_resource type="Theme" id="Theme_3y1vh"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_gij5s"]
+default_font_size = 50
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2dks")
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 222.0
+offset_right = 1025.0
+offset_bottom = 335.0
+text = "The Shadows of Nobilty"
+label_settings = SubResource("LabelSettings_1i7lf")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 353.0
+offset_right = 593.0
+offset_bottom = 430.0
+theme = SubResource("Theme_3y1vh")
+text = "start"
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 971.0
+offset_top = 569.0
+offset_right = 1151.0
+offset_bottom = 646.0
+theme = SubResource("Theme_gij5s")
+text = "Credits"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
