@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://du8j6q5pbi1ib"]
+[gd_scene load_steps=3 format=3 uid="uid://du8j6q5pbi1ib"]
 
-[ext_resource type="PackedScene" uid="uid://bg72xw4p6w3dq" path="res://scenes/player_sher.tscn" id="1_ntu7d"]
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_w5hkr"]
+[ext_resource type="PackedScene" uid="uid://c4gx1a5s2cmuw" path="res://scenes/character_picker.tscn" id="2_sdbfe"]
 
 [node name="level_02" type="Node2D"]
 position = Vector2(161, 90)
+script = ExtResource("1_w5hkr")
 
-[node name="Player_Sher" parent="." instance=ExtResource("1_ntu7d")]
+[node name="CharacterPicker" parent="." instance=ExtResource("2_sdbfe")]
+offset_left = 1471.0
+offset_top = 869.0
+offset_right = 1471.0
+offset_bottom = 869.0
