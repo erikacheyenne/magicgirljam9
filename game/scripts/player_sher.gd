@@ -14,8 +14,6 @@ var active = true
 
 func move():
 	input_movement = Input.get_vector("move_left","move_right","move_up","move_down")
-	print(input_movement)
-	print(get_slide_collision_count())
 	if input_movement != Vector2.ZERO:
 		velocity = input_movement * speed
 	if input_movement == Vector2.ZERO:
@@ -33,6 +31,7 @@ func move():
 		animated_sprite.play("walk_up")
 func _physics_process(delta):
 	move()
+	
 	
 
 func update_animations():
